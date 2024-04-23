@@ -3,3 +3,20 @@
 @import 'base/mixins';
 @import 'base/globales';
 @import 'base/utilidades';
+
+
+/** LAYOUT **/
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/navegacion';
+@import 'layout/sidebar';
+
+
+
+
+/** PAGINAS INTERNAS **/
+@import 'internas/admin';
+@import 'internas/formulario';
+
+

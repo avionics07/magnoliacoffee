@@ -1,0 +1,31 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sidebar {
+    height: 80vh; /* Altura completa de la ventana de visualización */
+    width: 250px; /* Ancho de la barra lateral */
+    position: relative; /* Posicionamiento fijo */
+    left: 0rem; /* A la izquierda de la página */
+    top: 0; /* En la parte superior de la página */
+    background-color: #DDB967; /* Color de fondo */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5); /* Sombra para efecto 3D */
+}
+
+.sidebar a {
+    display: block; /* Los enlaces ocupan toda la línea */
+    color: $negro; /* Color del texto */
+    padding: 30px; /* Espaciado interno para los enlaces */
+    text-decoration: none; /* No subrayado */
+    font-size: 18px; /* Tamaño del texto */
+}
+
+.sidebar a:hover {
+    transition:ease-in-out 0.5s;
+    color: darkgoldenrod;
+}
+
+/* Ajustar el contenido principal para no estar detrás de la barra lateral */
+.contenedor {
+    margin-left: 250px; /* Mismo ancho que la barra lateral */
+}

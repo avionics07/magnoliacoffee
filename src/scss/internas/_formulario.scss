@@ -1,0 +1,16 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+body{
+    background-color: v.$blanco;
+}
+.banner-form{
+    font-family: v.$fuente_banner;
+    color: v.$verde;
+}
+.banner {
+
+    background-color: v.$negro;
+    
+}
+
+
