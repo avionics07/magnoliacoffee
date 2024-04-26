@@ -1,17 +1,71 @@
-@use 'base/variables' as v;
-@use 'base/mixins' as m;
+.footer{
+    padding: $separacion calc($separacion / 2);
+    background-color: $negro;
 
-footer{
-    background-color: v.$naranja;
-
-    .contenido-footer{
-        padding-top: calc($separacion / 2);
+    .contenedor-footer {
+        padding: $separacion calc($separacion / 2);
     }
-}
-    .copyright{
+
+    a{
+        color:$blanco;
+        font-weight: $bold;
+    }
+    p {
         color: $blanco;
+        font-size: 1.7rem;
+        margin: 2rem 0 0 0;
         text-align: center;
     }
-p{
-    color: $blanco;
+
 }
+    
+
+.navegacion-footer{
+
+    @include tablet{
+        display: flex;
+        align-items: center;
+        
+    }
+    a , .newsletter-contenido{
+        // margin-right: 5rem;
+        // margin-top: 3rem;
+        text-decoration: none;
+        font-size: 2.5rem;
+        display: block;
+        text-align: center;
+
+        @include tablet{
+            margin-right: 5rem;
+            font-size: 2rem;
+
+            &:last-of-type{
+                margin-right: 0;
+            }
+        }
+    }
+}
+.formulario-newsletter{
+    p {
+        color: $blanco;
+        font-size: 1.7rem;
+        margin: 2rem 0 0 0;
+        text-align: center;
+    }
+
+    label {
+        color: $blanco;
+        font-weight: $bold;
+        text-transform: uppercase;
+        display: block;
+    }
+
+    input:not([type="submit"]){
+        padding: 1rem;
+        display: block;
+        border: 1px solid $marron;
+        border-radius: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+

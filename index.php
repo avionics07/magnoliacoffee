@@ -1,69 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magnolia Coffee</title>
     <link rel="stylesheet" href="/build/css/app.css">
 </head>
-<body>
 
-    <header class="header">
-        <div class="contenedor contenido-header">
+<header class="header">
+        <div class="contenido-header">
+
             <div class="barra">
+
                 <a href="/">
-                    <img src="" alt="Logotivo Magnolia Coffee">
+                    <img class="" src="" alt="Logotivo Magnolia Coffee">
                 </a>
-                
-                <nav class="navegacion">
+
+                <div class="mobile-menu">
+                    <img src="/build/img/line-md--close-to-menu-alt-transition (1).svg" alt="icono menu responsive">
+                </div>
+
+                <nav class="navegacion-header">
                     <a href="/">Home</a>
-                    <a href="nosotros.html">Nosotros</a>
-                    <a href="blog.html">Blog</a>
+                    <a href="nosotros.php">Nosotros</a>
+                    <a href="blog.php">Blog</a>
                     <a href="contacto.php">Contacto</a>
                     <a href="carrito.html">Carrito</a>
                 </nav>
 
-            </div>
+            </div> <!--.barra-->
         </div>
-    </header>
+</header>
+
+<body>
+
     <div class="main-banner">
         <h1>Sabor que conecta mundos</h1>
     </div>
- 
-    <div class="sidebar">
-        <a href="">Café en grano</a>
-        <a href="">Cafe Molido</a>
-        <a href="">Cafeteras</a>
-        <a href="">Accesorios</a>
-        <a href="">Capsulas Nespresso</a>
-    </div>
-
-    <main class="contenedor img-index seccion">
 
 
-    <h1>Bienvenido a Magnolia Coffee</h1>
+    <main class="img-index">
 
+        <div class="banner-img">
+
+            <img src="/build/img/top-view-coffee-with-copy-space.jpg" alt="">
+
+        </div>
+
+
+<?php
+    include './includes/templates/navBar.php';
+?>
+
+        <div class="main-banner-blog">
+            
+        <h1>Más Sobre Nosotros</h1>
+
+        </div>
+        <div class="iconos-nosotros">
+            <div class="icono">
+                <img src="/images/icon-park-outline--pure-natural.svg" alt="Icono Natural" loading="lazy">
+                <h3>Natural</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur iste, ratione optio perspiciatis voluptates similique eius officia eaque consequuntur quae ad id neque velit error porro deserunt sed aperiam qui!</p>
+            </div>
+            
+            <div class="icono">
+                <img src="/images/material-symbols--speed.svg" alt="Icono tiempo" loading="lazy">
+                <h3>Rapidos</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur iste, ratione optio perspiciatis voluptates similique eius officia eaque consequuntur quae ad id neque velit error porro deserunt sed aperiam qui!</p>
+            </div>
+
+            <div class="icono">
+                <img src="/images/solar--tag-price-bold.svg" alt="Icono Precio" loading="lazy">
+                <h3>Económicos</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur iste, ratione optio perspiciatis voluptates similique eius officia eaque consequuntur quae ad id neque velit error porro deserunt sed aperiam qui!</p>
+            </div>
+
+        </div>
+    
+        <div class="banner-img blog">
+
+
+
+
+        </div>
+        
+    <section class="imagen-contacto">
+        <h2>Contactanos</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, minima quibusdam odit earum excepturi, qui quam vero necessitatibus nostrum itaque nihil molestiae alias! Libero maiores voluptas dolorem commodi dolore laboriosam.</p>
+        <a href="contacto.php" class="boton boton-verde-block"> Formulario contacto </a>
+    </section>
 
 
     </main>
-    
 
-    <footer class="footer seccion">
 
-        <div class="contenedor contenido-footer">
-            <nav class="navegacion">
-                <a href="contacto.php">Contacto</a>
-                <a href="">Instagram</a>
-                <a href="">Twitter</a>
-                <a href="">Facebook</a>
-            </nav>
+<footer class="footer seccion">
+
+        <div class="contenedor contenedor-footer">
+                <nav class="navegacion-footer">
+                    <a href="contacto.php">Contacto</a>
+                    <a href="">Instagram</a>
+                    <a href="">Twitter</a>
+                    <a href="">Facebook</a>
+                </nav>
         </div>
 
-        <p class="newsletter contenedor">  Subscribete a nuestra newsletter</p>  
+        <form  class="contenedor formulario-newsletter">
+        
+                <label for="nombre">Subscribete y recibe todas nuestas ofertas</label>
+                <input type="email" placeholder="Tu Email" id="email">
+                <input class="boton-verde"  type="submit" value="Enviar">
+        
+        </form>
         <p class="copyright">Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>
-          
-    </footer>
-    
+</footer>
+
     <script src="/build/js/bundle.min.js"></script>
 </body>
+
 </html>

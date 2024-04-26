@@ -4,51 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienes Raices</title>
+    <title>Magnolia Coffee</title>
     <link rel="stylesheet" href="/build/css/app.css">
 </head>
 
-<body>
+<body class="body-admin">
 
-    <header class="header <?php echo $inicio ? 'inicio' : '' ?>">
-        <div class="contenedor contenido-header">
+<header class="header">
+        <div class="contenido-header">
+
             <div class="barra">
+
                 <a href="/">
-                    
+                    <img class="" src="" alt="Logotivo Magnolia Coffee">
                 </a>
 
-                <div class="mobile-menu">
-                    
-                </div>
+                <nav class="navegacion-header">
+                    <a href="/">Home</a>
+                    <a href="nosotros.php">Nosotros</a>
+                    <a href="blog.php">Blog</a>
+                    <a href="contacto.php">Contacto</a>
+                    <a href="carrito.html">Carrito</a>
+                </nav>
 
-                <div class="derecha">
-                    <nav class="navegacion">
-                        <a href="nosotros.php">Nosotros</a>
-                        <a href="anuncios.php">Anuncios</a>
-                        <a href="blog.php">Blog</a>
-                        <a href="contacto.php">Contacto</a>
-                    </nav>
-                </div>
-
-            </div> <!--cierre de la barra-->
-
-        
+            </div> <!--.barra-->
         </div>
-    </header>
+</header>
 
     <main class="contenedor">
         <h1>Contacto</h1>
         <picture>
-            <source srcset="build/img/destacada3.webp" type="image/webp">
-            <source srcset="build/img/destacada3.jpeg" type="image/jpeg">
-            <img loading="lazy" src="/build/img/destacada3.jpg" alt="Imagen Contacto">
+            <source srcset="/images/blog2.webp" type="image/webp">
+            <source srcset="/images/blog2.webp" type="image/jpeg">
+            <img class="imagen-contacto" loading="lazy" src="/images/blog2.webp" alt="Imagen Contacto">
         </picture>
 
         <h2>Llene el formulario de Contacto</h2>
 
         <form  class="formulario">
             <fieldset>
-                <legend>Información Personal</legend>
+            
 
                 <label for="nombre">Nombre</label>
                 <input type="text" placeholder="Tu Nombre" id="nombre">
@@ -64,22 +59,7 @@
             </fieldset>
 
             <fieldset>
-                <legend>Información Sobre la propiedad</legend>
-
-                <label for="opciones">Vende o Compra</label>
-                <select name="" id="opciones"> 
-
-                    <option value="" disabled selected>--Seleccione--</option>
-                    <option value="compra">Comprar</option>
-                    <option value="vende">Vender</option>
-                </select>
-
-                <label for="presupuesto">Precio o Presupuesto</label>
-                <input type="number" placeholder="Tu Precio o Presupuesto" id="presupuesto">
-            </fieldset>
-
-            <fieldset>
-                <legend>Información de la Propiedad</legend>
+                
 
                 <p>Como desea ser contactado</p>
                 

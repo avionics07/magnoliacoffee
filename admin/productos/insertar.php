@@ -87,8 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </header>
 
-<body>
-    <main class="contenedor seccion">
+<body class="body-admin">
+    <main class="contenedor seccion-admin">
         <div class="banner">
             <h1 class="banner-form">Actualizar Articulos</h1>
         </div>

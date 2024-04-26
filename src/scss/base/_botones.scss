@@ -1,0 +1,14 @@
+.boton-verde{
+    @include boton($verde);
+}
+
+.boton-rojo{
+    @include boton($naranjaClaro);
+}
+
+
+.boton-verde-block{
+    @include boton($verde);
+    display: block;
+}
+

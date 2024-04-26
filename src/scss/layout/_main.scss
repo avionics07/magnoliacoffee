@@ -1,0 +1,28 @@
+.img-index{
+    //background-image: url(/images/banner.webp);
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(5px);
+}
+
+.main-banner{
+     background-color: $negro;
+     color: $blanco;
+     text-transform: uppercase;
+     text-align: center;}
+.main-banner-blog{
+    background-color: $negro;
+    color: $blanco;
+    text-transform: uppercase;
+    
+
+}
+
+.banner-img img{
+    max-height: 60rem;
+    width: 100%;
+    object-fit:cover;
+    display:block ;
+    margin: 0 auto;
+
+}

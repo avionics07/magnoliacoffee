@@ -1,27 +1,23 @@
-@use 'base/variables' as v;
-@use 'base/mixins' as m;
 
 .header{
-
     background-color: whitesmoke;
-    padding: 1rem 0 3rem 0;
-}
-a{
-    color: v.$marron;
+
+    
+    a{
+    color: $marron;
     font-weight: $bold;
+    }
+
 }
 
 .contenido-header{
+    margin-right: 10rem;
+    margin-left: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    // @include tablet {
-    //     min-height: 70rem;
-    // }
-}
-.main-banner{
-    background-color: $negro;
-    color: $blanco;
-    text-transform: uppercase;
+     @include tablet {
+         min-height: 7rem;
+     }
 }

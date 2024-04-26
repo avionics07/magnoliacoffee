@@ -3,6 +3,7 @@
 @import 'base/mixins';
 @import 'base/globales';
 @import 'base/utilidades';
+@import 'base/botones';
 
 
 /** LAYOUT **/
@@ -11,12 +12,17 @@
 @import 'layout/footer';
 @import 'layout/navegacion';
 @import 'layout/sidebar';
+@import 'layout/main';
+@import 'layout/iconos';
+@import 'layout/articulos';
+@import 'layout/contacto';
+@import 'layout/formulario';
 
 
 
 
 /** PAGINAS INTERNAS **/
 @import 'internas/admin';
-@import 'internas/formulario';
+@import 'internas/formulario_interno';
 
 
