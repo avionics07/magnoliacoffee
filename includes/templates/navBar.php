@@ -8,7 +8,7 @@
     <a href="/tienda/molido.php">Cafe Molido</a>
     <a href="/tienda/cafeteras.php">Cafeteras</a>
     <a href="/tienda/accesorios.php">Accesorios</a>
-    <a href="">Capsulas Nespresso</a>
+    <a href="/tienda/capsulas.php">Capsulas Nespresso</a>
 </nav>
 
 </div>

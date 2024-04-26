@@ -24,6 +24,12 @@ $proveedores = mysqli_fetch_all($resultadoProveedores, MYSQLI_ASSOC);
 
 $errores = [];
 
+$nombre_producto='';
+$descripcion='';
+$stock_disponible='';
+$precio='';
+
+
 //EJECUTAR CONSULTA
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -82,10 +88,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="/build/css/app.css">
 </head>
 
-<header>
-
-
-</header>
 
 <body class="body-admin">
     <main class="contenedor seccion-admin">

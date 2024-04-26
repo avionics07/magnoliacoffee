@@ -1,0 +1,34 @@
+
+.blog-background{
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.blog-background::before {    
+    background-image: url(/build/img/top-view-roasted-coffee-beans-scattered-white-background-with-copy-space.jpg);
+
+    left: -60%;
+    content: "";
+    position: absolute;
+    top: 0;
+    
+    width: 100%;
+    height: 100%;
+
+    background-size: cover;
+    filter: blur(4px);
+    z-index: -1;
+}
+
+.imagen-blog{
+    display: block;
+    margin: 2rem auto;
+    height: auto;
+    width: 50%;
+
+    picture{
+        justify-content: center;
+   
+}
+}

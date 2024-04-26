@@ -3,7 +3,7 @@
 
             <div class="barra">
 
-                <a href="/">
+                <a href="/index.php">
                     <img class="" src="" alt="Logotivo Magnolia Coffee">
                 </a>
 
@@ -13,7 +13,6 @@
 
                 <nav class="navegacion-header">
                     <a href="/">Home</a>
-                    <a href="nosotros.php">Nosotros</a>
                     <a href="blog.php">Blog</a>
                     <a href="contacto.php">Contacto</a>
                     <a href="carrito.html">Carrito</a>

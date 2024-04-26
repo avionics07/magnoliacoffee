@@ -8,30 +8,9 @@
     <link rel="stylesheet" href="/build/css/app.css">
 </head>
 
-<header class="header">
-        <div class="contenido-header">
-
-            <div class="barra">
-
-                <a href="/">
-                    <img class="" src="" alt="Logotivo Magnolia Coffee">
-                </a>
-
-                <div class="mobile-menu">
-                    <img src="/build/img/line-md--close-to-menu-alt-transition (1).svg" alt="icono menu responsive">
-                </div>
-
-                <nav class="navegacion-header">
-                    <a href="/">Home</a>
-                    <a href="nosotros.php">Nosotros</a>
-                    <a href="blog.php">Blog</a>
-                    <a href="contacto.php">Contacto</a>
-                    <a href="carrito.html">Carrito</a>
-                </nav>
-
-            </div> <!--.barra-->
-        </div>
-</header>
+<?php
+    include './includes/templates/header.php';
+?>
 
 <body>
 
@@ -95,27 +74,12 @@
 
     </main>
 
+<?php
 
-<footer class="footer seccion">
+include './includes/templates/footer.php';
 
-        <div class="contenedor contenedor-footer">
-                <nav class="navegacion-footer">
-                    <a href="contacto.php">Contacto</a>
-                    <a href="">Instagram</a>
-                    <a href="">Twitter</a>
-                    <a href="">Facebook</a>
-                </nav>
-        </div>
+?>
 
-        <form  class="contenedor formulario-newsletter">
-        
-                <label for="nombre">Subscribete y recibe todas nuestas ofertas</label>
-                <input type="email" placeholder="Tu Email" id="email">
-                <input class="boton-verde"  type="submit" value="Enviar">
-        
-        </form>
-        <p class="copyright">Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>
-</footer>
 
     <script src="/build/js/bundle.min.js"></script>
 </body>

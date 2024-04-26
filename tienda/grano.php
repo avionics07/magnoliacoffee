@@ -18,8 +18,10 @@
 
 <body>
      <section class="molido">
-        <h2>Nuestra Mejor Selección de Cafe en Grano</h2>
 
+
+        <h2>Nuestra Mejor Selección de Cafe en Grano</h2>
+  
         <div class="contenedor-articulos">
             <div class="articulo">
                 <picture>
@@ -113,22 +115,11 @@
       
      </section>
 
-<footer class="footer">
+<?php
 
-<div class="contenedor contenido-footer">
-    <div class="barra">
-        <nav class="navegacion-footer">
-            <a href="contacto.php">Contacto</a>
-            <a href="">Instagram</a>
-            <a href="">Twitter</a>
-            <a href="">Facebook</a>
-        </nav>
-    </div>
-</div>
-<p class="newsletter contenedor"> Subscribete a nuestra newsletter</p>
-<p class="copyright">Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>
+include './includes/templates/footer.php';
 
-</footer>
+?>
 
 <script src="/build/js/bundle.min.js"></script>
 
