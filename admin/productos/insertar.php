@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+
+$auth = $_SESSION['login'];
+if(!$auth){
+    header('Location: /index.php');
+}
+
 require '../database.php';
 
 $db = conectarDB();
@@ -33,15 +40,32 @@ $precio='';
 //EJECUTAR CONSULTA
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+    // echo "<pre>";
+    // var_dump($_POST);
+    // echo "</pre>";
+
+    // echo "<pre>";
+    // var_dump($_FILES);
+    // echo "</pre>";
 
 
 
-    $nombre_producto = $_POST['nombre_producto'];
-    $descripcion = $_POST['descripcion'];
-    $precio = $_POST['precio'];
-    $stock_disponible = $_POST['stock_disponible'];
-    $categorias_idcategorias = $_POST['categorias_idcategorias'];
-    $proveedores_idproveedor = $_POST['proveedores_idproveedor'];
+    $nombre_producto = mysqli_real_escape_string($db, $_POST['nombre_producto']);
+    $descripcion = mysqli_real_escape_string($db,$_POST['descripcion']);
+    $precio = mysqli_real_escape_string($db, $_POST['precio']); 
+    $stock_disponible = mysqli_real_escape_string($db ,$_POST['stock_disponible']); 
+    $categorias_idcategorias = mysqli_real_escape_string($db ,$_POST['categorias_idcategorias']);
+    $proveedores_idproveedor = mysqli_real_escape_string($db ,$_POST['proveedores_idproveedor']);
+
+
+    //Asignar Files hacia una variable
+
+    $imagen = $_FILES['imagen'];
+
+    var_dump($imagen['name']);
+
+
+;
 
     if(!$nombre_producto) {
         $errores[] = "Debes añadir el nombre del articulo";
@@ -59,6 +83,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errores[] = "El precio es obligatorio";
     }
 
+
+    if(!$imagen['name']) {
+        $errores[] = "Debes añadir la imagen del articulo";
+    }
+
+    // Validar por tamaño de la imagen
+
+    $medida = 1000*100;
+    if($imagen['size'] > $medida) {
+        $errores[] = "La imagen es muy pesada";
+    }
+
     // Revisar que el arreglo de errores este vacio y ejecutar consulta si lo esta
 
     if (empty($errores)) {
@@ -69,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $resultado = mysqli_query($db, $sql);
     
         if ($resultado) {
-            header('Location: /admin/productos/correcto.php');
+            header('Location: /admin');
         }
     }
      
@@ -95,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <h1 class="banner-form">Actualizar Articulos</h1>
         </div>
         
-        <input type="submit" value="Volver" href="" class="boton boton-verde">
+        <input type="submit" value="Volver" href="/" class="boton boton-verde">
 
         <?php foreach($errores as $error): ?>
             <div class="alerta error">
@@ -104,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php endforeach; ?>
         
 
-        <form class="formulario" method="POST" action="/admin/productos/insertar.php">
+        <form class="formulario" method="POST" action="/admin/productos/insertar.php" enctype="multipart/form-data">
 
             <fieldset>
 
@@ -145,7 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <br>
 
                 <label for="imagen">Imagen:</label>
-                <input type="file" id="imagen" accept="image/jpeg, image/png">
+                <input type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
 
                 <br>
 

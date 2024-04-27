@@ -10,15 +10,13 @@
 <?php
     session_start();
 
-    // echo "<pre>";
-    // var_dump($_SESSION);
-    // echo "</pre>";
-
     $auth = $_SESSION['login'];
-
     if(!$auth){
         header('Location: /index.php');
     }
+
+
+    
 
     require '../admin/database.php';
     $db = conectarDB();
