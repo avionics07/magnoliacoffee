@@ -1,9 +1,12 @@
 .boton-verde{
     @include boton($verde);
+    border-radius: 1rem;
 }
 
 .boton-rojo{
     @include boton($naranjaClaro);
+
+    border-radius: 1rem;
 }
 
 

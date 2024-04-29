@@ -5,7 +5,7 @@ if(!isset($_SESSION)) {
 }
 $auth = $_SESSION['login'] ?? false;
 
-var_dump($auth);
+
 
 
 ?>
@@ -41,6 +41,12 @@ var_dump($auth);
                     <?php if($auth): ?>
                         
                         <a href="/logout.php">Cerrar Sesion</a>
+
+                        <?php endif ?>
+
+                        <?php if($auth): ?>
+                        
+                        <a href="/admin/index.php">Admin</a>
 
                         <?php endif ?>
                 </nav>

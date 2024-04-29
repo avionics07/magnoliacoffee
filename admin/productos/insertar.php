@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $imagen = $_FILES['imagen'];
 
-    var_dump($imagen['name']);
+    
 
 
 ;
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validar por tamaño de la imagen
 
-    $medida = 1000*100;
+    $medida = 1000*1000;
     if($imagen['size'] > $medida) {
         $errores[] = "La imagen es muy pesada";
     }
@@ -98,14 +98,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Revisar que el arreglo de errores este vacio y ejecutar consulta si lo esta
 
     if (empty($errores)) {
-        $sql = "INSERT INTO productos (nombre_producto, descripcion, precio, stock_disponible, categorias_idcategorias, proveedores_idproveedor)
 
-        VALUES ('$nombre_producto', '$descripcion', '$precio', '$stock_disponible', '$categorias_idcategorias', '$proveedores_idproveedor')";
+        // Crear carpeta para subir imagenes
+        $carpetaImagenes = '../../imagenesProductos';
+
+        if(!is_dir($carpetaImagenes)) {  
+            mkdir($carpetaImagenes);
+        }
+
+        $nombreImagen = md5( uniqid( rand(), true ) ).".jpg";
+
+
+        //Subir la imagen
+        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . "/" . $nombreImagen);
+    
+
+        $sql = "INSERT INTO productos (nombre_producto, descripcion, precio, imagen, stock_disponible, categorias_idcategorias, proveedores_idproveedor)
+
+        VALUES ('$nombre_producto', '$descripcion', '$precio', '$nombreImagen', '$stock_disponible', '$categorias_idcategorias', '$proveedores_idproveedor')";
     
         $resultado = mysqli_query($db, $sql);
     
         if ($resultado) {
-            header('Location: /admin');
+            header('Location: /admin?resultado=1');
         }
     }
      
@@ -131,7 +146,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <h1 class="banner-form">Actualizar Articulos</h1>
         </div>
         
-        <input type="submit" value="Volver" href="/" class="boton boton-verde">
+        <br>
+
 
         <?php foreach($errores as $error): ?>
             <div class="alerta error">
@@ -141,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
 
         <form class="formulario" method="POST" action="/admin/productos/insertar.php" enctype="multipart/form-data">
-
+        <a href="/admin/index.php" class="boton boton-rojo">Volver</a>
             <fieldset>
 
                 <legend>Descripcion producto</legend>
