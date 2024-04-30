@@ -41,11 +41,11 @@
 }
 
 
-.navegacion-header a:hover {
-    transition:ease-in-out 0.5s;
+// .navegacion-header a:hover {
+//     transition:ease-in-out 0.5s;
    
-    color: #4F3824; /* Color de fondo al pasar el mouse */
-}
+//     color: #4F3824; /* Color de fondo al pasar el mouse */
+// }
 
 // MENU HAMBURGUESA
 
@@ -62,4 +62,13 @@
 
 .mostrar{
     display: block;
+}
+
+.navegacion-header a:hover{
+    transform: scale(1.1, 1,1);
+}
+.navegacion-header:hover > a:not(:hover){
+    transition: ease 0.5s;
+    filter:blur(2px);
+    transform: scale(0.9, 0.9);
 }

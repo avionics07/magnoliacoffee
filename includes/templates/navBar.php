@@ -1,7 +1,7 @@
 <div class="barra-sidebar">
 
 <div class="mobile-menu-sidebar">
-        <img src="/build/img/line-md--close-to-menu-alt-transition (1).svg" alt="icono menu responsive">
+        <img src="/build/icons/heroicons-solid--menu.svg" alt="icono menu responsive">
 </div>
 <nav class="navegacion-sidebar">
     <a href="/tienda/grano.php">Café en grano</a>

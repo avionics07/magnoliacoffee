@@ -26,11 +26,11 @@ $auth = $_SESSION['login'] ?? false;
             <div class="barra">
 
                 <a href="/index.php">
-                    <img class="" src="" alt="Logotivo Magnolia Coffee">
+                    <img class="logo" src="/build/img/logo.JPG" alt="Logotivo Magnolia Coffee">
                 </a>
 
                 <div class="mobile-menu">
-                    <img src="/build/img/line-md--close-to-menu-alt-transition (1).svg" alt="icono menu responsive">
+                    <img src="/build/icons/heroicons-solid--menu.svg" alt="icono menu responsive">
                 </div>
 
                 <nav class="navegacion-header">
@@ -38,6 +38,7 @@ $auth = $_SESSION['login'] ?? false;
                     <a href="blog.php">Blog</a>
                     <a href="/contacto.php">Contacto</a>
                     <a href="carrito.html">Carrito</a>
+                    <a href="/login.php">Login</a>
                     <?php if($auth): ?>
                         
                         <a href="/logout.php">Cerrar Sesion</a>

@@ -29,7 +29,7 @@
 }
 
 h3, p{
-    margin:0;
+    margin:2rem;
 }
 
 .precio {
@@ -39,3 +39,11 @@ h3, p{
     text-align: center;
 }
 
+.contenedor-articulos .articulo:hover{
+    transform: scale(1.1, 1,1);
+}
+.contenedor-articulos:hover > .articulo:not(:hover){
+    transition: ease 0.5s;
+    filter:blur(2px);
+    transform: scale(0.9, 0.9);
+}

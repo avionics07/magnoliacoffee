@@ -10,7 +10,7 @@
 
 </html>
 
-<body>
+<body class="body-admin">
 
     <?php
 

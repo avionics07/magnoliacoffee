@@ -8,7 +8,10 @@
     font-weight: $bold;
     }
 
+        
+
 }
+
 
 .contenido-header{
     margin-right: 10rem;
@@ -20,4 +23,8 @@
      @include tablet {
          min-height: 7rem;
      }
+}
+.logo{
+    margin: 0 auto;
+        width: 30rem;
 }
