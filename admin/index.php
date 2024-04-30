@@ -44,6 +44,21 @@ $query = "SELECT * FROM productos";
 //CONSULTAR A LA BASE DE DATOS
 $resultado = mysqli_query($db, $query);
 
+function getCategoriaNombre($categoriaId) {
+    switch($categoriaId) {
+        case 1:
+            return "Grano";
+        case 2:
+            return "Molido";
+        case 3:
+            return "Cafeteras";
+        case 4:
+            return "Accesorios";
+        default:
+            return "No Definido";
+    }
+}
+
 
 
 
@@ -68,6 +83,7 @@ include '../includes/templates/header.php';
             <tr>
                 <td>ID</td>
                 <td>Nombre Producto</td>
+                <td>Categoria</td>
                 <td>Imagen</td>
                 <td>Precio</td>
                 <td>Acciones</td>
@@ -78,6 +94,7 @@ include '../includes/templates/header.php';
                 <tr>
                     <td><?php echo $producto['idproducto']; ?> </td>
                     <td><?php echo $producto['nombre_producto']; ?> </td>
+                    <td><?php echo getCategoriaNombre($producto['categorias_idcategorias']) ?> </td>
                     <td><img src="/imagenesProductos/<?php echo $producto['imagen']; ?> " class="imagen-tabla" alt="imagenProducto"></td>
                     <td><?php echo $producto['precio']; ?> €</td>
                     <td>

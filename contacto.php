@@ -17,9 +17,8 @@
     <main class="contenedor">
         <h1>Contacto</h1>
         <picture>
-            <source srcset="/images/blog2.webp" type="image/webp">
-            <source srcset="/images/blog2.webp" type="image/jpeg">
-            <img class="imagen-contacto" loading="lazy" src="/images/blog2.webp" alt="Imagen Contacto">
+            <source srcset="/build/img/contacto.jpg" type="image/jpeg">
+            <img class="imagen-contacto" loading="lazy" src="/build/img/contacto.jpg" alt="Imagen Contacto">
         </picture>
 
         <h2>Llene el formulario de Contacto</h2>

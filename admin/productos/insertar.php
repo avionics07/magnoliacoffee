@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errores[] = "Debes añadir el nombre del articulo";
     }
 
-    if(strlen($descripcion) < 30) {
+    if(strlen($descripcion) < 20) {
         $errores[] = "Debes añadir una descripción de minimo 50 caractertes";
     }
 

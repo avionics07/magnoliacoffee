@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe en Grano</title>
-    <link rel="stylesheet" href="/build/css/app.css">
-</head>
-
 
 <?php
     include '../includes/templates/header.php';
@@ -22,97 +13,14 @@
 
         <h2>Nuestra Mejor Selección de Cafe en Grano</h2>
   
-        <div class="contenedor-articulos">
-            <div class="articulo">
-                <picture>
-                    <img loading="lazy" src="/build/img/incapto_jungle.png" alt="incapto cafe">
-                </picture>
 
-                <div class="contenido-articulo">
-                    <h3>Café Strong Blend</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p class="precio">21.99€</p></p>
-                    <a class="boton boton-verde" href="carrito.php" class="btn">Comprar</a>
-                </div> <!--.contenido-articulo-->
-                
-            </div>  <!--.articulo-->
+        <?php
+            $limite = 6;
+            include '../includes/templates/articulos.php'
 
-            <div class="articulo">
-                <picture>
-                    <img loading="lazy" src="/build/img/incapto_jungle.png" alt="incapto cafe">
-                </picture>
-
-                <div class="contenido-articulo">
-                    <h3>Café Strong Blend</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p class="precio">21.99€</p></p>
-                    <a class="boton boton-verde" href="carrito.php" class="btn">Comprar</a>
-                </div> <!--.contenido-articulo-->
-                
-            </div>  <!--.articulo-->
-
-
-            <div class="articulo">
-                <picture>
-                    <img loading="lazy" src="/build/img/incapto_jungle.png" alt="incapto cafe">
-                </picture>
-
-                <div class="contenido-articulo">
-                    <h3>Café Strong Blend</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p class="precio">21.99€</p></p>
-                    <a class="boton boton-verde" href="carrito.php" class="btn">Comprar</a>
-                </div> <!--.contenido-articulo-->
-                
-            </div>  <!--.articulo-->
-
-            <div class="articulo">
-                <picture>
-                    <img loading="lazy" src="/build/img/incapto_jungle.png" alt="incapto cafe">
-                </picture>
-
-                <div class="contenido-articulo">
-                    <h3>Café Strong Blend</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p class="precio">21.99€</p></p>
-                    <a class="boton boton-verde" href="carrito.php" class="btn">Comprar</a>
-                </div> <!--.contenido-articulo-->
-                
-            </div>  <!--.articulo-->
-
-            <div class="articulo">
-                <picture>
-                    <img loading="lazy" src="/build/img/incapto_jungle.png" alt="incapto cafe">
-                </picture>
-
-                <div class="contenido-articulo">
-                    <h3>Café Strong Blend</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p class="precio">21.99€</p></p>
-                    <a class="boton boton-verde" href="carrito.php" class="btn">Comprar</a>
-                </div> <!--.contenido-articulo-->
-                
-            </div>  <!--.articulo-->
-
-            <div class="articulo">
-                <picture>
-                    <img loading="lazy" src="/build/img/incapto_jungle.png" alt="incapto cafe">
-                </picture>
-
-                <div class="contenido-articulo">
-                    <h3>Café Strong Blend</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <p class="precio">21.99€</p></p>
-                    <a class="boton boton-verde" href="carrito.php" class="btn">Comprar</a>
-                </div> <!--.contenido-articulo-->
-                
-            </div>  <!--.articulo-->
-
-            
-           
-        </div> <!--.contenedor-articulos-->
-
+        ?>
       
+
      </section>
 
 <?php
