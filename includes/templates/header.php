@@ -18,6 +18,7 @@ $auth = $_SESSION['login'] ?? false;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magnolia Coffee</title>
     <link rel="stylesheet" href="/build/css/app.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <header class="header">
@@ -37,7 +38,11 @@ $auth = $_SESSION['login'] ?? false;
                     <a href="/">Home</a>
                     <a href="blog.php">Blog</a>
                     <a href="/contacto.php">Contacto</a>
-                    <a href="carrito.html">Carrito</a>
+                    <a href="/mostrarCarrito.php">Carrito(<?php 
+                    
+                    echo (empty($_SESSION['CARRITO'])) ? 0 : count($_SESSION['CARRITO']);
+                    
+                    ?>)</a>
                     <a href="/login.php">Login</a>
                     <?php if($auth): ?>
                         

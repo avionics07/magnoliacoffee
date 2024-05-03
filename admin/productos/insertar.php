@@ -64,9 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     
 
-
-;
-
     if(!$nombre_producto) {
         $errores[] = "Debes añadir el nombre del articulo";
     }
