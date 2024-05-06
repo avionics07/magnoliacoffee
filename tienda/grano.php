@@ -49,12 +49,6 @@ include '../includes/templates/navBar.php';
 
 
         <div class="contenedor-articulos">
-            <div class="alert alert-success">
-
-                <?php echo ($mensaje); ?>
-                <a href=""> Ver carrito</a>
-                
-            </div>
 
             <?php while ($articulo = mysqli_fetch_assoc($resultado)) :       ?>
                 <div class="articulo">

@@ -25,7 +25,7 @@
 <div class="blog-background"> 
 <div class="contenedor contenido-principal-blog">
         <main class="blog">
-            <h3>Nuestro Blog</h3>
+            <h1 class="margin-top">Nuestro Blog</h3>
 
 <article class="entrada">
         <div class="entrada__imagen">
@@ -35,7 +35,8 @@
         </div>
 
         <div class="entrada__contenido">
-            <h4 class="no-margin">Cómo hacer un Espresso Perfecto en Casa: Consejos y Pasos a Seguir</h4>
+            <h2 class="no-margin">Cómo hacer un Espresso Perfecto en Casa: Consejos y Pasos a Seguir</h2>
+            <br>
                     <p>El espresso es una bebida emblemática en el mundo del café, apreciada por su sabor intenso y su textura cremosa. Aunque tradicionalmente se ha asociado con las cafeterías, cada vez más personas están descubriendo cómo preparar esta deliciosa bebida en la comodidad de sus hogares. Con los pasos adecuados y los equipos adecuados, puedes disfrutar de un espresso perfecto sin salir de casa. Aquí te presentamos una guía paso a paso para lograrlo:
 <br>
 <br>
@@ -86,29 +87,30 @@ Preparar un espresso perfecto en casa puede requerir algo de práctica y pacienc
                 </div>
 
                 <div class="entrada__contenido">
-                    <h4 class="no-margin">3 Deliciosas Recetas de Café</h4>
+                    <h2 class="no-margin">3 Deliciosas Recetas de Café</h2>
+                    <br>
                     <h3>Café Helado con Vainilla:</h2>
     <ul>
-        <li>Prepara una taza de café fuerte y déjala enfriar.</li>
-        <li>Agrega hielo a un vaso y vierte el café enfriado.</li>
-        <li>Añade una cucharadita de extracto de vainilla.</li>
-        <li>Remueve y decora con crema batida opcionalmente.</li>
+        <p>Prepara una taza de café fuerte y déjala enfriar.</p>
+        <p>Agrega hielo a un vaso y vierte el café enfriado.</p>
+        <p>Añade una cucharadita de extracto de vainilla.</p>
+        <p>Remueve y decora con crema batida opcionalmente.</p>
     </ul>
 
         <h3>Mocha Especial de Chocolate:</h2>
     <ul>
-        <li>Prepara un espresso doble.</li>
-        <li>Calienta leche y añade chocolate en polvo al gusto.</li>
-        <li>Vierte el espresso sobre la mezcla de leche y chocolate.</li>
-        <li>Decora con crema batida y virutas de chocolate.</li>
+        <p>Prepara un espresso doble.</p>
+        <p>Calienta leche y añade chocolate en polvo al gusto.</p>
+        <p>Vierte el espresso sobre la mezcla de leche y chocolate.</p>
+        <p>Decora con crema batida y virutas de chocolate.</p>
     </ul>
 
         <h3>Café con Especias de Otoño:</h2>
     <ul>
-        <li>Prepara una taza de café negro.</li>
-        <li>Añade una pizca de canela, nuez moscada y una pizca de jengibre.</li>
-        <li>Endulza con sirope de arce o miel al gusto.</li>
-        <li>Termina con un toque de crema batida y canela espolvoreada.</li>
+        <p>Prepara una taza de café negro.</p>
+        <p>Añade una pizca de canela, nuez moscada y una pizca de jengibre.</p>
+        <p>Endulza con sirope de arce o miel al gusto.</p>
+        <p>Termina con un toque de crema batida y canela espolvoreada.</p>
     </ul>
 
                     

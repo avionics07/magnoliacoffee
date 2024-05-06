@@ -38,23 +38,19 @@ include '../includes/templates/navBar.php';
 
         ?>
 
-
-        <div class="alert alert-success">
-
-            <?php echo ($mensaje) ?>
-            <a href="" class="badge badge-success"></a>
-
+        <?php 
+            if($mensaje =! ""){ ?> 
+                <div class="alert alert-success">
+                <?php echo $mensaje; ?>
+                    <a href="/mostrarCarrito.php" class="badge badge-success">Ver carrito</a>
         </div>
+
+        <?php } ?>
 
 
 
         <div class="contenedor-articulos">
-            <div class="alert alert-success">
 
-                <?php echo ($mensaje); ?>
-                <a href=""> Ver carrito</a>
-                
-            </div>
 
             <?php while ($articulo = mysqli_fetch_assoc($resultado)) :       ?>
                 <div class="articulo">
@@ -74,7 +70,10 @@ include '../includes/templates/navBar.php';
                             <input type="hidden" name="nombre_producto" id="nombre_producto" value="<?php echo openssl_encrypt($articulo['nombre_producto'], COD, KEY) ?>">
                             <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt($articulo['precio'], COD, KEY) ?>">
                             <input type="hidden" name="descripcion" id="descripcion" value="<?php echo openssl_encrypt($articulo['descripcion'], COD, KEY) ?>">
-                            <button class="boton boton-verde" name="btnAccion" type="submit" value="Agregar">Añadir al carrito</button>
+                            <button class="boton boton-verde" 
+                            name="btnAccion" 
+                            type="submit" 
+                            value="Agregar">Añadir al carrito</button>
 
                         </form>
 
