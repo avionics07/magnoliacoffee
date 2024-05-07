@@ -1,3 +1,4 @@
+
 .img-index{
     //background-image: url(/images/banner.webp);
     background-size: cover;
@@ -6,6 +7,7 @@
 }
 
 .main-banner{
+     margin-bottom: 0 !important;
      background-color: $negro;
      color: $blanco;
      text-transform: uppercase;

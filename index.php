@@ -28,7 +28,7 @@
 
         <div class="main-banner-blog">
             
-        <h1>Más Sobre Nosotros</h1>
+        <h1 class="slogan">Más Sobre Nosotros</h1>
 
         </div>
         <div class="iconos-nosotros">

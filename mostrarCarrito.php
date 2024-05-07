@@ -15,11 +15,10 @@ define("COD", "AES-128-ECB");
 
 if (!empty($_SESSION['CARRITO'])) { ?>
 
-    <table class="table table-light table-bordered">
+    <table class="contenedor">
         <tbody>
             <tr>
-                <th width="40px">Descripcion</th>
-                <th width="15px" class="text-center">Cantidad</th>
+                <th width="40px" class="text-center">Descripcion</th>
                 <th width="20px" class="text-center">Precio</th>
                 <th width="20px" class="text-center">Total</th>
                 <th width="5px"></th>
@@ -27,7 +26,7 @@ if (!empty($_SESSION['CARRITO'])) { ?>
             <?php $total = 0; ?>
             <?php foreach ($_SESSION['CARRITO'] as $indice => $articulo) { ?>
                 <tr>
-                    <td width="40px" class="text-center"><?php echo $articulo['NOMBRE'] ?></td>
+                    <td width="40px" class="text-center" width="200px"><?php echo $articulo['NOMBRE'] ?></td>
                     <td width="15px" class="text-center">
                         </th>
                     <td width="20px" class="text-center"><?php echo $articulo['PRECIO'] ?></td>
@@ -37,7 +36,7 @@ if (!empty($_SESSION['CARRITO'])) { ?>
                         <form action="" method="POST">
                             <input type="hidden" name="idproducto" id="idproducto" value="<?php echo openssl_encrypt($articulo['ID'], COD, KEY) ?>">
 
-                            <button class="boton btn btn-danger" type="submit" name="btnAccion" value="Eliminar">Eliminar</button>
+                            <button class="boton boton-rojo" type="submit" name="btnAccion" value="Eliminar">Eliminar</button>
 
                         </form>
                     </td>
@@ -78,7 +77,7 @@ if (!empty($_SESSION['CARRITO'])) { ?>
 
                         </div>
 
-                        <button class="btn btn-primary btn-lh btn-block" 
+                        <button class="boton boton-verde" 
                         type="submit" 
                         value="proceder" 
                         name="btnAccion">

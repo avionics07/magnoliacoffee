@@ -53,7 +53,7 @@ if($_POST){
 <div class="jumbotron text-center">
     <h1 class="display-4">¡Paso Final!</h1>
     <hr class="my-4">
-    <h1 class="lead">Pagar con Paypal :
+    <h1 class="lead">El total a pagar es de:
         <h1><?php echo number_format($total,2)."€"; ?></h4>
         <div id="paypal-container-8LEYXU9TFTSB4"></div>
 </h2>
