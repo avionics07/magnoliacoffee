@@ -77,8 +77,13 @@
     include './includes/templates/header.php';
     ?>
 
+<h1 class="contenedor seccion contenido-centrado">Login</h1>
+        <picture>
+            <source srcset="/build/img/contacto.jpg" type="image/jpeg">
+            <img class="imagen-contacto" loading="lazy" src="/build/img/contacto.jpg" alt="Imagen Login" style="width: 60rem">
+
+        </picture>
     <main class="contenedor seccion contenido-centrado">
-        <h1>Login</h1>
 
         <?php
         foreach ($errores as $error) : ?>

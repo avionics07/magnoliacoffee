@@ -20,7 +20,7 @@ include '../includes/templates/navBar.php';
         $db = conectarDB();
         // CONSULTAR BD
         $limite = 6;
-        $query = "SELECT * FROM productos WHERE categorias_idcategorias='2' LIMIT ${limite} ";
+        $query = "SELECT * FROM productos WHERE categorias_idcategorias='1' LIMIT ${limite} ";
 
 
 

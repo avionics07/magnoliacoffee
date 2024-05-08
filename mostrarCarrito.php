@@ -7,7 +7,11 @@ include './includes/templates/header.php';
 <br>
 
 <h3>Lista del Carrito</h3>
+<picture>
+            <source srcset="/build/img/contacto.jpg" type="image/jpeg">
+            <img class="imagen-contacto" loading="lazy" src="/build/img/contacto.jpg" alt="Imagen Login" style="width: 60rem">
 
+        </picture>
 <?php
 // ENCRIPTAR INFORMACION DEL CARRITO
 define("KEY", "magnoliacoffe");
@@ -96,8 +100,8 @@ if (!empty($_SESSION['CARRITO'])) { ?>
     </table>
 
 <?php } else { ?>
-    <div class="alert alert-success">
-        No hay productos en el carrito
+    <div class="alert alerta error">
+        <p class="contenedor" style="font-size: 3rem; text-align: center">No hay productos en el carrito</p>
     </div>
 <?php } ?>
 

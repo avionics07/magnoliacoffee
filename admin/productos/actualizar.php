@@ -3,17 +3,41 @@
 session_start();
 
 $auth = $_SESSION['login'];
-if (!$auth) {
+if(!$auth){
     header('Location: /index.php');
 }
+
+// Validar ID valido
+$id= $_GET['id'];
+$id= filter_var($id, FILTER_VALIDATE_INT);
+if (!$id) {
+    header('Location: /admin');
+}
+
+
 
 require '../database.php';
 
 $db = conectarDB();
 
+// CREAR CONSULTA
+
+$consulta = "SELECT * FROM productos WHERE idproducto = ${id}";
+
+$resultado = mysqli_query($db, $consulta);
+$articulo = mysqli_fetch_assoc($resultado);
 
 
 
+
+
+
+$nombre_producto= $articulo['nombre_producto'];
+$descripcion= $articulo['descripcion'];
+$stock_disponible= $articulo['stock_disponible'];
+$precio= $articulo['precio'];
+$imagenArticulo= $articulo['imagen'];
+$proveedores_idproveedor= $articulo['proveedores_idproveedor'];
 
 //Obtener categorias y proveedores para usar en el formulario
 $sqlCategorias = "SELECT idcategoria, nombre_categoria FROM categorias ORDER BY nombre_categoria ASC";
@@ -28,18 +52,14 @@ $proveedores = mysqli_fetch_all($resultadoProveedores, MYSQLI_ASSOC);
 
 $errores = [];
 
-$nombre_producto = '';
-$descripcion = '';
-$stock_disponible = '';
-$precio = '';
 
 
 //EJECUTAR CONSULTA
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    // echo "<pre>";
-    // var_dump($_POST);
-    // echo "</pre>";
+ echo "<pre>";
+     var_dump($_POST);
+    echo "</pre>";
 
     // echo "<pre>";
     // var_dump($_FILES);
@@ -48,44 +68,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     $nombre_producto = mysqli_real_escape_string($db, $_POST['nombre_producto']);
-    $descripcion = mysqli_real_escape_string($db, $_POST['descripcion']);
-    $precio = mysqli_real_escape_string($db, $_POST['precio']);
-    $stock_disponible = mysqli_real_escape_string($db, $_POST['stock_disponible']);
-    $categorias_idcategorias = mysqli_real_escape_string($db, $_POST['categorias_idcategorias']);
-    $proveedores_idproveedor = mysqli_real_escape_string($db, $_POST['proveedores_idproveedor']);
-
+    $descripcion = mysqli_real_escape_string($db,$_POST['descripcion']);
+    $precio = mysqli_real_escape_string($db, $_POST['precio']); 
+    $stock_disponible = mysqli_real_escape_string($db ,$_POST['stock_disponible']); 
+    $categorias_idcategorias = mysqli_real_escape_string($db ,$_POST['categorias_idcategorias']);
+    $proveedores_idproveedor = mysqli_real_escape_string($db ,$_POST['proveedores_idproveedor']);
+    
 
     //Asignar Files hacia una variable
 
     $imagen = $_FILES['imagen'];
 
+    
 
-
-    if (!$nombre_producto) {
+    if(!$nombre_producto) {
         $errores[] = "Debes añadir el nombre del articulo";
     }
 
-    if (strlen($descripcion) < 20) {
+    if(strlen($descripcion) < 20) {
         $errores[] = "Debes añadir una descripción de minimo 50 caractertes";
     }
 
-    if (!$stock_disponible) {
+    if(!$stock_disponible) {
         $errores[] = "Falta el Stock disponible";
     }
 
-    if (!$precio) {
+    if(!$precio) {
         $errores[] = "El precio es obligatorio";
     }
 
 
-    if (!$imagen['name']) {
-        $errores[] = "Debes añadir la imagen del articulo";
-    }
-
     // Validar por tamaño de la imagen
 
-    $medida = 1000 * 1000;
-    if ($imagen['size'] > $medida) {
+    $medida = 1000*1000;
+    if($imagen['size'] > $medida) {
         $errores[] = "La imagen es muy pesada";
     }
 
@@ -93,30 +109,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (empty($errores)) {
 
-        // Crear carpeta para subir imagenes
-        $carpetaImagenes = '../../imagenesProductos';
+        // // Crear carpeta para subir imagenes
+        // $carpetaImagenes = '../../imagenesProductos';
 
-        if (!is_dir($carpetaImagenes)) {
-            mkdir($carpetaImagenes);
-        }
+        // if(!is_dir($carpetaImagenes)) {  
+        //     mkdir($carpetaImagenes);
+        // }
 
-        $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-
-
-        //Subir la imagen
-        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . "/" . $nombreImagen);
+        // $nombreImagen = md5( uniqid( rand(), true ) ).".jpg";
 
 
-        $sql = "INSERT INTO productos (nombre_producto, descripcion, precio, imagen, stock_disponible, categorias_idcategorias, proveedores_idproveedor)
+        // //Subir la imagen
+        // move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . "/" . $nombreImagen);
+    
 
-        VALUES ('$nombre_producto', '$descripcion', '$precio', '$nombreImagen', '$stock_disponible', '$categorias_idcategorias', '$proveedores_idproveedor')";
+        $sql = "UPDATE productos SET nombre_producto = '$nombre_producto',precio = $precio, imagen = '$imagenArticulo', stock_disponible = $stock_disponible, categorias_idcategorias = $categorias_idcategorias, proveedores_idproveedor = $proveedores_idproveedor WHERE idproducto = '$id' ";
+            
+        //echo $sql;
+      
 
         $resultado = mysqli_query($db, $sql);
-
+    
         if ($resultado) {
-            header('Location: /admin?resultado=1');
+            header('Location: /admin?resultado=2');
         }
     }
+     
+
 }
 
 ?>
@@ -135,28 +154,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body class="body-admin">
     <main class="contenedor seccion-admin">
         <div class="banner">
-            <h1 class="banner-form">Insertar Articulos</h1>
+            <h1 class="banner-form">Actualizar Articulos</h1>
         </div>
-
+        
         <br>
 
 
-        <?php foreach ($errores as $error) : ?>
+        <?php foreach($errores as $error): ?>
             <div class="alerta error">
-                <?php echo $error; ?>
+            <?php echo $error; ?>
             </div>
         <?php endforeach; ?>
+        
 
-
-        <form class="formulario" method="POST" action="/admin/productos/insertar.php" enctype="multipart/form-data">
-            <a href="/admin/index.php" class="boton boton-rojo">Volver</a>
+        <form class="formulario" method="POST" enctype="multipart/form-data">
+        <a href="/admin/index.php" class="boton boton-rojo">Volver</a>
             <fieldset>
 
                 <legend>Descripcion producto</legend>
 
                 <label for="proveedor">Proveedor:</label>
                 <select name="proveedores_idproveedor" id="proveedor">
-
+            
                     <?php foreach ($proveedores as $proveedor) : ?>
                         <option value="<?= $proveedor['idproveedor'] ?>"><?= $proveedor['nombre_proveedor'] ?></option>
                     <?php endforeach ?>
@@ -164,12 +183,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </select>
 
                 <label for="nombre_producto">Nombre:</label>
-                <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Marca producto">
+                <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Marca producto" value="<?php echo $nombre_producto; ?>">
 
                 <br>
 
                 <label for="descripcion">Descripcion:</label>
-                <textarea id="descripcion" name="descripcion"></textarea>
+                <textarea id="descripcion" name="descripcion"><?php echo $descripcion; ?></textarea>
 
                 <br>
 
@@ -184,23 +203,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <br>
 
                 <label for="precio">Precio:</label>
-                <input type="number" id="precio" name="precio" placeholder="Precio Producto">
+                <input type="number" id="precio" name="precio" placeholder="Precio Producto" value=<?php echo $precio; ?>>
 
                 <br>
 
                 <label for="imagen">Imagen:</label>
                 <input type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
 
+                <img src="/imagenesProductos/<?php echo $imagenArticulo; ?>" class="imagen-small">
+                        
                 <br>
 
                 <label for="stock_disponible">Stock Disponible</label>
-                <input type="number" id="stock_disponible" name="stock_disponible" placeholder="Ej:3" min="1">
+                <input type="number" id="stock_disponible" name="stock_disponible" placeholder="Ej:3" min="1" value="<?php echo $stock_disponible; ?>">
 
             </fieldset>
 
 
 
-            <input type="submit" value="Enviar" class="boton boton-verde">
+            <input type="submit" value="Actualizar Producto" class="boton boton-verde">
             <input type="submit" value="Cancelar" class="boton boton-rojo">
 
 

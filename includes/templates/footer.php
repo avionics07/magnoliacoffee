@@ -9,11 +9,7 @@
                 </nav>
         </div>
 
-        <form  class="contenedor formulario-newsletter">
-        
-                <label for="nombre">Subscribete y recibe todas nuestas ofertas</label>
-                <input type="email" placeholder="Tu Email" id="email">
-                <input class="boton-verde"  type="submit" value="Enviar">
+
         
         </form>
         <p class="copyright">Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>

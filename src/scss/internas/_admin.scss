@@ -2,15 +2,16 @@
     padding: .5rem;
     text-align: center;
     color: $negro;
-    font-weight: $bold;
+    font-weight: 900;
     text-transform: uppercase;
-    margin: 1rem 0;
+    margin: 5rem 0;
+    border-radius: 1rem;
 
     &.error {
         background-color: #f76a6a;
     }
     &.exito {
-        background-color: $verde;
+        background-color: green;
     }
 }
 
@@ -31,4 +32,8 @@ table.propiedades  {
     .imagen-tabla{
         width: 10rem;
     }
+}
+
+.imagen-small {
+    width: 20rem;
 }

@@ -69,10 +69,16 @@ include '../includes/templates/header.php';
 <main class="contenedor">
     <h1>Administrador Magnolia Coffee</h1>
     <?php if (intval($accionResultado) == 1) : ?>
-        <p class="alerta exito">Producto insertado correctamente</p>
+        <p class="alerta exito">Producto Insertado Correctamente</p>
+        <br>
+    <?php endif; ?>
+    <?php if (intval($accionResultado) == 2) : ?>
+        <p class="alerta exito">Producto Actualizado Correctamente</p>
+        <br>
     <?php endif; ?>
     <?php if (intval($accionResultado) == 3) : ?>
-        <p class="alerta exito">Producto eliminado correctamente</p>
+        <p class="alerta exito">Producto Eliminado Correctamente</p>
+        <br>
     <?php endif; ?>
 
     <a href="../admin/productos/insertar.php" class="boton boton-verde">Insertar Productos</a>
@@ -103,7 +109,9 @@ include '../includes/templates/header.php';
                             <input type="hidden" name="id" value="<?php echo $producto['idproducto']; ?>">
 
                             <input type="submit" value="Borrar" class="boton boton-rojo">
+                            
                         </form>
+                        <a href="/admin/productos/actualizar.php?id=<?php echo $producto['idproducto']; ?>" type="submit" value="Actualizar" class="boton boton-verde" >Actualizar</a>
                         <a href="/admin/productos/borrar.php?id=<?php echo $producto['idproducto']; ?>" class="boton boton-amarillo"></a>
                     </td>
                 </tr>
