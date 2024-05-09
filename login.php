@@ -77,48 +77,51 @@
     include './includes/templates/header.php';
     ?>
 
-<h1 class="contenedor seccion contenido-centrado">Login</h1>
+    <body class="body-login">
+
+
+        <h1 class="contenedor seccion contenido-centrado">Login</h1>
         <picture>
-            <source srcset="/build/img/contacto.jpg" type="image/jpeg">
-            <img class="imagen-contacto" loading="lazy" src="/build/img/contacto.jpg" alt="Imagen Login" style="width: 60rem">
+            <source srcset="/build/img/delicious-coffee-cup-indoors.jpg" type="image/jpeg">
+            <img class="imagen-contacto" loading="lazy" src="/build/img/delicious-coffee-cup-indoors.jpg" alt="Imagen Login" style="width: 60rem">
 
         </picture>
-    <main class="contenedor seccion contenido-centrado">
+        <main class="contenedor seccion contenido-centrado">
 
-        <?php
-        foreach ($errores as $error) : ?>
+            <?php
+            foreach ($errores as $error) : ?>
 
-            <div class="alerta error">
-                <?php echo $error; ?>
-            </div>
-        <?php endforeach; ?>
+                <div class="alerta error">
+                    <?php echo $error; ?>
+                </div>
+            <?php endforeach; ?>
 
-        <form method="POST" class="formulario" action="" novalidate>
+            <form method="POST" class="formulario" action="" novalidate>
 
-            <fieldset>
-                <legend>Email y Password</legend>
-
-
-
-                <label for="email">E-Mail</label>
-                <input type="email" name="email" placeholder="Tu E-Mail" id="email">
-
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Tu Password" id="password">
-
-                <input type="submit" value="Iniciar Sesion" class="boton boton-verde">
-
-            </fieldset>
+                <fieldset>
+                    <legend>Email y Password</legend>
 
 
 
-        </form>
+                    <label for="email">E-Mail</label>
+                    <input type="email" name="email" placeholder="Tu E-Mail" id="email">
+
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Tu Password" id="password">
+
+                    <input type="submit" value="Iniciar Sesion" class="boton boton-verde">
+
+                </fieldset>
 
 
-    </main>
+
+            </form>
+
+
+        </main>
 
 
 
-</body>
+    </body>
 
-</html>
+    </html>

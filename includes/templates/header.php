@@ -18,13 +18,16 @@ $auth = $_SESSION['login'] ?? false;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magnolia Coffee</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="/build/css/app.css">
+    
     
 </head>
 
 <header class="header">
         <div class="contenido-header">
-
+        
             <div class="barra">
 
                 <a href="/index.php">
@@ -37,7 +40,7 @@ $auth = $_SESSION['login'] ?? false;
 
                 <nav class="navegacion-header">
                     <a href="/">Home</a>
-                    <a href="blog.php">Blog</a>
+                    <a href="/blog.php">Blog</a>
                     <a href="/contacto.php">Contacto</a>
                     <a href="/mostrarCarrito.php">Carrito(<?php 
                     

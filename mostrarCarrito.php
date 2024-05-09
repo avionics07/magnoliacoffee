@@ -14,10 +14,23 @@ include './includes/templates/header.php';
         </picture>
 <?php
 // ENCRIPTAR INFORMACION DEL CARRITO
+
 define("KEY", "magnoliacoffe");
 define("COD", "AES-128-ECB");
 
+include './tienda/carrito.php';
+
+
+
+
 if (!empty($_SESSION['CARRITO'])) { ?>
+
+<div class="alert alert-success">
+
+<?php echo ($mensaje) ?>
+
+
+</div>
 
     <table class="contenedor">
         <tbody>
@@ -31,16 +44,20 @@ if (!empty($_SESSION['CARRITO'])) { ?>
             <?php foreach ($_SESSION['CARRITO'] as $indice => $articulo) { ?>
                 <tr>
                     <td width="40px" class="text-center" width="200px"><?php echo $articulo['NOMBRE'] ?></td>
-                    <td width="15px" class="text-center">
-                        </th>
-                    <td width="20px" class="text-center"><?php echo $articulo['PRECIO'] ?></td>
+                    <td width="15px" class="text-center"><?php echo $articulo['PRECIO'] ?>€ </td>
+                    <td width="20px" class="text-center"></td>
                     <td width="20px" class="text-center">--</th>
                     <td width="5px">
 
                         <form action="" method="POST">
                             <input type="hidden" name="idproducto" id="idproducto" value="<?php echo openssl_encrypt($articulo['ID'], COD, KEY) ?>">
 
-                            <button class="boton boton-rojo" type="submit" name="btnAccion" value="Eliminar">Eliminar</button>
+                            <button 
+                            class="boton boton-rojo" 
+                            type="submit" 
+                            name="btnAccion" 
+                            value="Eliminar">Eliminar
+                            </button>
 
                         </form>
                     </td>

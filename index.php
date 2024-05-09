@@ -15,7 +15,7 @@
         <div class="banner-img">
             
 
-            <img src="/build/img/top-view-coffee-with-copy-space.jpg" alt="">
+            <img src="/build/img/banner-main.jpg" alt="imagen banner">
 
            
 

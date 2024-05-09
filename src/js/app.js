@@ -41,3 +41,20 @@ function navegacionResponsiveSidebar() {
 }
 
 
+function agregarAlCarrito(event) {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+    const formulario = event.target.form;
+    Swal.fire({
+        title: '¿Quieres añadir el producto al carrito?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, añadir',
+        cancelButtonText: 'No, cancelar',
+    }).then((result) => {
+        if (result.isConfirmed) {
+                formulario.submit();
+            // Puedes usar JavaScript para enviar el formulario manualmente
+            //
+        }
+    });
+}

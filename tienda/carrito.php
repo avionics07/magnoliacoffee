@@ -1,5 +1,4 @@
 <?php
-
 $mensaje = "";
 
 if (isset($_POST['btnAccion'])) {
@@ -44,30 +43,24 @@ if (isset($_POST['btnAccion'])) {
                 $_SESSION['CARRITO'][$numeroArticulos] = $articulo;
             }
 
-            $mensaje = print_r($_SESSION, true);
+            $mensaje = "Producto añadido al carrito correctamente.";
 
             break;
             case "Eliminar":
-                $idProducto = openssl_decrypt($_POST['idproducto'], COD, KEY);
-                if(is_numeric($idProducto)){
-                    $ID = $idProducto;
+                $ID = openssl_decrypt($_POST['idproducto'], COD, KEY);
+                if (is_numeric($ID)) {
                     $carritoActualizado = array();
 
-
-                    foreach($_SESSION['CARRITO'] as $indice => $articulo){
-                        if($articulo['ID'] != $ID){
+                    foreach ($_SESSION['CARRITO'] as $indice => $articulo) {
+                        if ($articulo['ID'] != $ID) {
                             $carritoActualizado[] = $articulo;
                         }
                     }
-
                     $_SESSION['CARRITO'] = $carritoActualizado;
-
-                    echo '<script>alert ("Articulo eliminado")</script>';
+                    $mensaje = "Artículo eliminado del carrito.";
                 } else {
-                    $mensaje = "ID incorrecto";
-                    echo '<script>alert ("Articulo eliminado")</script>';
+                    $mensaje = "ID incorrecto.";
                 }
-
-            break;
+                break;
     }
 }

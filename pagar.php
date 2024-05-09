@@ -60,7 +60,7 @@ if($_POST){
 <script src="https://www.paypal.com/sdk/js?client-id=BAAQSEm2n6I9RLKnNuw2oaJ5tU9V39hTNmdkyfM3MyMgSqFklU14y7aQw8M6tuUiBbfUhONdSZvPWhYaTU&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
 
 <script>
-  paypal.HostedButtons({
+  paypal.render({
     hostedButtonId: "8LEYXU9TFTSB4",
   }).render("#paypal-container-8LEYXU9TFTSB4")
 </script>

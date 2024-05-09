@@ -1,30 +1,64 @@
 
-.blog-background{
+.imagen-blog_banner{
     position: relative;
     overflow: hidden;
+
     
 }
 
-.blog-background::before {    
-    background-image: url(/build/img/top-view-roasted-coffee-beans-scattered-white-background-with-copy-space.jpg);
-
-    left: -60%;
-    content: "";
-    position: absolute;
-    top: 0;
-    
-    width: 100%;
-    height: 100%;
-
-    background-size: cover;
-    z-index: -1;
+/* Estilo para cada artículo */
+.entrada {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; /* Separa los elementos a cada lado */
+    margin-bottom: 20px; /* Espacio entre artículos */
 }
+
+/* Estilo para las imágenes y el contenido de cada artículo */
+.entrada__imagen, .entrada__contenido {
+    flex: 1; /* Cada elemento toma la mitad del espacio disponible */
+    padding: 10px; /* Espacio dentro de cada elemento */
+}
+
+.entrada--invertida {
+    flex-direction: row-reverse;
+}
+
+.entrada--centrado {
+    justify-content: center; /* Centra la imagen y el texto horizontalmente */
+}
+
+.entrada--centrado .entrada__contenido {
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda si es necesario */
+    max-width: 50%; /* Opcional, limita el ancho del texto para mejorar la legibilidad */
+}
+
+/* Opcional: Añade media queries para ajustar el diseño en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .entrada {
+        flex-direction: column; /* Coloca los elementos en columna en pantallas pequeñas */
+    }
+}
+
+// .imagen-blog_banner::before {    
+//      content: "";
+//      position: absolute;
+//      top: 0;
+//      left: 0;
+//      width: 100%;
+//      height: 100%;
+//      background-image: url(/build/iloveimg-compressed/top-view-roasted-coffee-beans-scattered-white-background-with-copy-space.jpg);
+//      background-size: 50%;
+
+//      filter: blur(2px);
+//      z-index: -1;
+//   }
 
 .imagen-blog{
     display: block;
     margin: 2rem auto;
     height: auto;
-    width: 50%;
+    width: 80%;
 
     picture{
         justify-content: center;

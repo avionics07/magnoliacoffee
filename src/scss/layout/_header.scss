@@ -1,8 +1,5 @@
 
 .header{
-    margin-bottom: 2.5rem;
-
-    
     a{
     color: $marron;
     font-weight: $bold;
@@ -15,7 +12,7 @@
 
 .contenido-header{
     margin-right: 10rem;
-    margin-left: 10rem;
+    //margin-left: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,6 +22,14 @@
      }
 }
 .logo{
-    margin: 0 auto;
-        width: 30rem;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    width: 40rem;
+    margin-top: 0; 
+    margin-bottom: 0;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.8;
+   
+}
+.logo:hover {
+    opacity: 1; 
 }

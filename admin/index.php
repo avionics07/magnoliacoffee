@@ -22,17 +22,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($id) {
         //ELIMINAR ARCHIVO DE LA IMAGEN
-         $query= "SELECT imagen FROM productos WHERE idproducto = ${id}";
+        $query = "SELECT imagen FROM productos WHERE idproducto = ${id}";
 
-         $resultado = mysqli_query($db, $query);
-         $propiedad = mysqli_fetch_assoc($resultado);
+        $resultado = mysqli_query($db, $query);
+        $propiedad = mysqli_fetch_assoc($resultado);
 
-         unlink('../imagenesProductos/' . $propiedad['imagen']);
+        unlink('../imagenesProductos/' . $propiedad['imagen']);
 
         //ELIMINAR EL PRODUCTO
         $query = "DELETE FROM productos WHERE idproducto = ${id}";
         $resultado = mysqli_query($db, $query);
-        if ($resultado) {    
+        if ($resultado) {
             header('Location: /admin?resultado=3');
         }
     }
@@ -44,8 +44,9 @@ $query = "SELECT * FROM productos";
 //CONSULTAR A LA BASE DE DATOS
 $resultado = mysqli_query($db, $query);
 
-function getCategoriaNombre($categoriaId) {
-    switch($categoriaId) {
+function getCategoriaNombre($categoriaId)
+{
+    switch ($categoriaId) {
         case 1:
             return "Grano";
         case 2:
@@ -66,62 +67,66 @@ include '../includes/templates/header.php';
 
 ?>
 
-<main class="contenedor">
-    <h1>Administrador Magnolia Coffee</h1>
-    <?php if (intval($accionResultado) == 1) : ?>
-        <p class="alerta exito">Producto Insertado Correctamente</p>
-        <br>
-    <?php endif; ?>
-    <?php if (intval($accionResultado) == 2) : ?>
-        <p class="alerta exito">Producto Actualizado Correctamente</p>
-        <br>
-    <?php endif; ?>
-    <?php if (intval($accionResultado) == 3) : ?>
-        <p class="alerta exito">Producto Eliminado Correctamente</p>
-        <br>
-    <?php endif; ?>
+<body class="body-admin">
 
-    <a href="../admin/productos/insertar.php" class="boton boton-verde">Insertar Productos</a>
-    <a href="/index.php" class="boton boton-rojo">Volver</a>
 
-    <table class="propiedades">
-        <thead>
-            <tr>
-                <td>ID</td>
-                <td>Nombre Producto</td>
-                <td>Categoria</td>
-                <td>Imagen</td>
-                <td>Precio</td>
-                <td>Acciones</td>
-            </tr>
-        </thead>
-        <tbody> <!--- MOSTRAR LOS RESULTADOS DE LA CONSULTA A LA DB -->
-            <?php while ($producto = mysqli_fetch_assoc($resultado)) : ?>
+    <main class="contenedor">
+        <h1>Administrador Magnolia Coffee</h1>
+        <?php if (intval($accionResultado) == 1) : ?>
+            <p class="alerta exito">Producto Insertado Correctamente</p>
+            <br>
+        <?php endif; ?>
+        <?php if (intval($accionResultado) == 2) : ?>
+            <p class="alerta exito">Producto Actualizado Correctamente</p>
+            <br>
+        <?php endif; ?>
+        <?php if (intval($accionResultado) == 3) : ?>
+            <p class="alerta exito">Producto Eliminado Correctamente</p>
+            <br>
+        <?php endif; ?>
+
+        <a href="../admin/productos/insertar.php" class="boton boton-verde">Insertar Productos</a>
+        <a href="/index.php" class="boton boton-rojo">Volver</a>
+
+        <table class="propiedades">
+            <thead style="text-align: center; border: 1px solid black; border-radius: 5px;">
                 <tr>
-                    <td><?php echo $producto['idproducto']; ?> </td>
-                    <td><?php echo $producto['nombre_producto']; ?> </td>
-                    <td><?php echo getCategoriaNombre($producto['categorias_idcategorias']) ?> </td>
-                    <td><img src="/imagenesProductos/<?php echo $producto['imagen']; ?> " class="imagen-tabla" alt="imagenProducto"></td>
-                    <td><?php echo $producto['precio']; ?> €</td>
-                    <td>
-                        <form method="POST" class="w-100">
 
-                            <input type="hidden" name="id" value="<?php echo $producto['idproducto']; ?>">
-
-                            <input type="submit" value="Borrar" class="boton boton-rojo">
-                            
-                        </form>
-                        <a href="/admin/productos/actualizar.php?id=<?php echo $producto['idproducto']; ?>" type="submit" value="Actualizar" class="boton boton-verde" >Actualizar</a>
-                        <a href="/admin/productos/borrar.php?id=<?php echo $producto['idproducto']; ?>" class="boton boton-amarillo"></a>
-                    </td>
+                    <td>Nombre Producto</td>
+                    <td>Categoria</td>
+                    <td>Imagen</td>
+                    <td>Precio</td>
+                    <td>Acciones</td>
                 </tr>
-            <?php endwhile; ?>
+            </thead>
+            <tbody> <!--- MOSTRAR LOS RESULTADOS DE LA CONSULTA A LA DB -->
+                <?php while ($producto = mysqli_fetch_assoc($resultado)) : ?>
+                    <tr>
 
-        </tbody>
-    </table>
+                        <td><?php echo $producto['nombre_producto']; ?> </td>
+                        <td><?php echo getCategoriaNombre($producto['categorias_idcategorias']) ?> </td>
+                        <td><img src="/imagenesProductos/<?php echo $producto['imagen']; ?> " class="imagen-tabla" alt="imagenProducto"></td>
+                        <td><?php echo $producto['precio']; ?> €</td>
+                        <td>
+                            <form method="POST" class="w-100">
 
-</main>
+                                <input type="hidden" name="id" value="<?php echo $producto['idproducto']; ?>">
 
+                                <input type="submit" value="Borrar" class="boton boton-rojo">
+                                <a href="/admin/productos/actualizar.php?id=<?php echo $producto['idproducto']; ?>" type="submit" value="Actualizar" class="boton boton-verde">Actualizar</a>
+
+                                <a href="/admin/productos/borrar.php?id=<?php echo $producto['idproducto']; ?>" class="boton boton-amarillo"></a>
+                            </form>
+
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+
+            </tbody>
+        </table>
+
+    </main>
+</body>
 
 <?php
 
