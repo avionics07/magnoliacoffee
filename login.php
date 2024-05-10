@@ -22,11 +22,8 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-
-
         $email = mysqli_real_escape_string($db, filter_var($_POST['email'], FILTER_VALIDATE_EMAIL));
         $password = mysqli_real_escape_string($db, $_POST['password']);
-
 
         if (!$email) {
             $errores[] = "El email es obligatorio o no es valido";
@@ -35,12 +32,10 @@
             $errores[] = "El password es obligatorio";
         }
 
-
         if (empty($errores)) {
             //Revisar si el usuario existe
             $query = "SELECT * FROM usuarios WHERE email = '${email}'";
             $resultado = mysqli_query($db, $query);
-
 
             if ($resultado->num_rows > 0) {
 
@@ -51,16 +46,20 @@
 
                 $auth = password_verify($password, $usuario['password']);
 
-
                 if ($auth) {
                     // usuario verificado
                     session_start();
                     $_SESSION['usuario'] = $usuario['email'];
                     $_SESSION['login'] = true;
+                    $_SESSION['rol'] = $usuario['rol'];
 
-
+                    if($_SESSION['rol'] == 'admin') {
                     header('Location: /admin/index.php');
                 } else {
+                    header('Location: /index.php');
+                }
+                }
+                 else {
                     $errores[] = "El password es incorrecto";
                 }
             } else {

@@ -39,10 +39,10 @@ include '../includes/templates/navBar.php';
         ?>
 
 
-        <div class="alert alert-success">
+        <div class="alert alert-success alerta exito" role="alert">
 
             <?php echo ($mensaje) ?>
-            
+
 
         </div>
 

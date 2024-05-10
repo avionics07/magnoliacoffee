@@ -43,7 +43,7 @@ $auth = $_SESSION['login'] ?? false;
                     <a href="/blog.php">Blog</a>
                     <a href="/contacto.php">Contacto</a>
                     <a href="/mostrarCarrito.php">Carrito(<?php 
-                    
+           
                     echo (empty($_SESSION['CARRITO'])) ? 0 : count($_SESSION['CARRITO']);
                     
                     ?>)</a>
@@ -54,11 +54,11 @@ $auth = $_SESSION['login'] ?? false;
 
                         <?php endif ?>
 
-                        <?php if($auth): ?>
+                        <?php if (isset($_SESSION['login']) && $_SESSION['login'] && isset($_SESSION['rol']) && $_SESSION['rol'] == 'admin'): ?>
                         
                         <a href="/admin/index.php">Admin</a>
-
-                        <?php endif ?>
+                    
+                    <?php endif; ?>
                 </nav>
 
             </div> <!--.barra-->

@@ -53,9 +53,9 @@ include './includes/templates/header.php';
                     <article class="entrada entrada--inversa">
                         <div class="entrada__contenido">
                             <h2 class="no-margin">3 Deliciosas Recetas de Café</h2>
-<br>
-                            <h3>Café Helado con Vainilla:</h2>
                             <br>
+                            <h3>Café Helado con Vainilla:</h2>
+                                <br>
                                 <ul>
                                     <p>Prepara una taza de café fuerte y déjala enfriar.</p>
                                     <p>Agrega hielo a un vaso y vierte el café enfriado.</p>

@@ -22,51 +22,47 @@
         </picture>
 
         <h2>Llene el formulario de Contacto</h2>
+        <div class="contacto__form formulario">
 
-        <form class="formulario">
-            <fieldset>
+            <div class="form-message success">
+                <span>Mensaje enviado correctamente</span>
+            </div>
+            <div class="form-message error">
+                <span>Rellene los campos correctamenter</span>
+            </div>
+            <form action="https://formspree.io/f/myyrdpgp" method="POST" id="formulario">
+                <fieldset>
 
-
-                <label for="nombre">Nombre</label>
-                <input type="text" placeholder="Tu Nombre" id="nombre">
-
-                <label for="email">E-Mail</label>
-                <input type="email" placeholder="Tu E-Mail" id="email">
-
-                <label for="telefono">Telefono</label>
-                <input type="tel" placeholder="Telefono" id="telefono">
-
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje"></textarea>
-            </fieldset>
-
-            <fieldset>
-
-
-                <p>Como desea ser contactado</p>
-
-                <div class="forma-contacto">
-
-                    <label for="contactar-telefono">Teléfono</label>
-                    <input name="contacto" type="radio" value="telefono" id="contactar-telefono">
-
-
-                    <label for="contactar-email">E-mail</label>
-                    <input name="contacto" type="radio" value="email" id="contactar-email">
+                <div class="form-group">
+                    <label for="nombre" >Nombre</label>
+                    <input type="text" name="nombre" placeholder="Tu Nombre" id="nombre">
                 </div>
 
-                <p>En caso de seleccionar ser contactado telefonicamente, elija la fecha y la hora a la que desea que le llamen</p>
+                <div class="form-group">
+                    <label for="email" >E-Mail</label>
+                    <input type="email" name="email" placeholder="Tu E-Mail" id="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Telefono</label>
+                    <input type="tel" name="telefono" placeholder="Telefono" id="telefono">
+                </div>
 
-                <label for="fecha">Fecha</label>
-                <input type="date" id="fecha">
+                <div class="form-group">
 
-                <label for="hora">Hora</label>
-                <input type="time" id="hora" min="09:00" max="19:00">
+                    <label for="mensaje" >Mensaje:</label>
+                    <textarea name="mensaje" id="mensaje"></textarea>
 
-            </fieldset>
+                </div>
 
-            <input class="boton-verde" type="submit" value="Enviar">
-        </form>
+                </fieldset>
+            <a class="boton-verde" type="submit" value="Enviar" id="submit-button">
+                Enviar
+            </a>
+            </form>
+        </div>
+
+
     </main>
 
 
@@ -75,8 +71,9 @@
     include './includes/templates/footer.php';
 
     ?>
-
-    <script src="/build/js/bundle.min.js"></script>
+    
+    <!-- <script src="/build/js/bundle.min.js"></script> -->
+    <script type="text/javascript" src="/src/js/app.js"></script>
 </body>
 
 </html>

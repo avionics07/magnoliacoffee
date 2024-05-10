@@ -6,12 +6,17 @@
     backdrop-filter: blur(5px);
 }
 
-.main-banner{
-     margin-bottom: 0 !important;
-     background-color: $negro;
-     color: $blanco;
-     text-transform: uppercase;
-     text-align: center;}
+.main-banner {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    justify-content: center; /* Alinea horizontalmente */
+    height: 10rem;
+    margin-bottom: 0 !important;
+    background-color: $negro; 
+    color: $blanco; 
+    text-transform: uppercase;
+    text-align: center;
+}
 .main-banner-blog{
     background-color: $negro;
     color: $blanco;

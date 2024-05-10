@@ -38,12 +38,12 @@ include '../includes/templates/navBar.php';
 
         ?>
 
-<div class="alert alert-success">
+        <div class="alert alert-success alerta exito" role="alert">
 
-<?php echo ($mensaje) ?>
-<a href="" class="badge badge-success"></a>
+            <?php echo ($mensaje) ?>
 
-</div>
+
+        </div>
 
 
 
@@ -68,11 +68,7 @@ include '../includes/templates/navBar.php';
                             <input type="hidden" name="nombre_producto" id="nombre_producto" value="<?php echo openssl_encrypt($articulo['nombre_producto'], COD, KEY) ?>">
                             <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt($articulo['precio'], COD, KEY) ?>">
                             <input type="hidden" name="descripcion" id="descripcion" value="<?php echo openssl_encrypt($articulo['descripcion'], COD, KEY) ?>">
-                            <button class="boton boton-verde" 
-                            name="btnAccion" 
-                            type="button" 
-                            value="Agregar"
-                            onclick="agregarAlCarrito(event)">Añadir al carrito</button>
+                            <button class="boton boton-verde" name="btnAccion" type="submit" value="Agregar">Añadir al carrito</button>
 
                         </form>
 

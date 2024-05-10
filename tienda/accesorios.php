@@ -38,13 +38,12 @@ include '../includes/templates/navBar.php';
 
         ?>
 
+<div class="alert alert-success alerta exito" role="alert">
 
-        <div class="alert alert-success">
+<?php echo ($mensaje) ?>
 
-            <?php echo ($mensaje) ?>
-            <a href="" class="badge badge-success"></a>
 
-        </div>
+</div>
 
 
 
