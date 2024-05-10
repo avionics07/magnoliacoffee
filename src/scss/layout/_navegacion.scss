@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 10rem;
     @include tablet{
+        margin-left: 0;
         flex-direction: row;
         justify-content: space-between;
     }

@@ -53,13 +53,12 @@
                     $_SESSION['login'] = true;
                     $_SESSION['rol'] = $usuario['rol'];
 
-                    if($_SESSION['rol'] == 'admin') {
-                    header('Location: /admin/index.php');
+                    if ($_SESSION['rol'] == 'admin') {
+                        header('Location: /admin/index.php');
+                    } else {
+                        header('Location: /index.php');
+                    }
                 } else {
-                    header('Location: /index.php');
-                }
-                }
-                 else {
                     $errores[] = "El password es incorrecto";
                 }
             } else {
