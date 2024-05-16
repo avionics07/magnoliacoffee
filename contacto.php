@@ -33,32 +33,32 @@
             <form action="https://formspree.io/f/myyrdpgp" method="POST" id="formulario">
                 <fieldset>
 
-                <div class="form-group">
-                    <label for="nombre" >Nombre</label>
-                    <input type="text" name="nombre" placeholder="Tu Nombre" id="nombre">
-                </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" placeholder="Tu Nombre" id="nombre">
+                    </div>
 
-                <div class="form-group">
-                    <label for="email" >E-Mail</label>
-                    <input type="email" name="email" placeholder="Tu E-Mail" id="email">
-                </div>
-                
-                <div class="form-group">
-                    <label for="telefono">Telefono</label>
-                    <input type="tel" name="telefono" placeholder="Telefono" id="telefono">
-                </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" name="email" placeholder="Tu E-Mail" id="email">
+                    </div>
 
-                <div class="form-group">
+                    <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input type="tel" name="telefono" placeholder="Telefono" id="telefono">
+                    </div>
 
-                    <label for="mensaje" >Mensaje:</label>
-                    <textarea name="mensaje" id="mensaje"></textarea>
+                    <div class="form-group">
 
-                </div>
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea name="mensaje" id="mensaje"></textarea>
+
+                    </div>
 
                 </fieldset>
-            <a class="boton-verde" type="submit" value="Enviar" id="submit-button">
-                Enviar
-            </a>
+                <a class="boton-verde" type="submit" value="Enviar" id="submit-button">
+                    Enviar
+                </a>
             </form>
         </div>
 
@@ -71,7 +71,7 @@
     include './includes/templates/footer.php';
 
     ?>
-    
+
     <!-- <script src="/build/js/bundle.min.js"></script> -->
     <script type="text/javascript" src="/src/js/app.js"></script>
 </body>

@@ -59,14 +59,47 @@ if($_POST){
 </h2>
 <script src="https://www.paypal.com/sdk/js?client-id=BAAQSEm2n6I9RLKnNuw2oaJ5tU9V39hTNmdkyfM3MyMgSqFklU14y7aQw8M6tuUiBbfUhONdSZvPWhYaTU&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
 
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <!-- Identificador del negocio vendedor y tipo de botón -->
+        <input type="hidden" name="business" value="sb-cpzvn30647994_api1.business.example.com">
+        <input type="hidden" name="cmd" value="_xclick">
+
+        <!-- Detalles del producto y precios -->
+        <input type="hidden" name="amount" value="<?php echo $total; ?>">
+        <input type="hidden" name="currency_code" value="USD">
+
+        <!-- URLs de retorno al finalizar el pago -->
+        <input type="hidden" name="return" value="/index.php">
+
+        <!-- Botón de envío -->
+        <input type="image" name="submit" border="0"
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"
+        alt="PayPal - The safer, easier way to pay online">
+        <img alt="" border="0" width="1" height="1"
+        src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+    </form>
+
+<div id="paypal-button-container"></div>
 <script>
-  paypal.render({
-    hostedButtonId: "8LEYXU9TFTSB4",
-  }).render("#paypal-container-8LEYXU9TFTSB4")
+paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: '<?php echo $total; ?>'
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        // Aquí puedes redirigir al usuario o mostrar un mensaje de éxito
+        alert('Transaction completed by ' + details.payer.name.given_name);
+      });
+    }
+  }).render('#paypal-button-container');
 </script>
 </div>
-
-
 
 
 <!--  
